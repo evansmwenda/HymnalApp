@@ -12,18 +12,24 @@ class MyApp extends StatelessWidget {
         leading: Icon(Icons.menu),
       ),
       body: Container(
-        child: GestureDetector(
-          onPanUpdate: (details) {
-            if (details.delta.dx > 0) {
-              // swiping in right direction
-              print("you have swipped to the right");
-            }else if(details.delta.dy > 0){
-              // swiping in left direction
-              print("you have swipped to the left");
-            }
-          },
+        child:
+
+
+        SwipeDetector(
           child: Center(child: Text("Hello ...songs here")),
-        ),
+        onSwipeUp: () {
+          print("you have swipped up");
+        },
+        onSwipeDown: () {
+          print("you have swipped down");
+        },
+        onSwipeLeft: () {
+          print("you have swipped left");
+        },
+        onSwipeRight: () {
+          print("you have swipped right");
+        },
+      )
       ),
       floatingActionButton: Visibility(
         visible: isVisible,
