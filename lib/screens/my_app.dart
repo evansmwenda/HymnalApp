@@ -24,9 +24,14 @@ class _MyAppState extends State<MyApp> {
         if (direction == SwipeDirection.up) {
           _text = 'Swiped up!';
           print('Swiped up!');
+          setState(() {
+            //display the floating action button
+            isVisible = true;
+          });
         } else {
           _text = 'Swiped down!';
           print('Swiped down!');
+          isVisible = false;
         }
       });
     }
